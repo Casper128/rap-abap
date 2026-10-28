@@ -1,0 +1,5 @@
+@EndUserText.label: 'Servicio exposicion de entidades'
+define service ZUI_CONNECTIONS {
+  expose ZI_CONNECTIONS_R as Connetions;
+  expose ZI_FLIGHTS_DAO_R as Flights;
+}

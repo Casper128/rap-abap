@@ -1,0 +1,5 @@
+@EndUserText.label: 'Servicio de aeropuertos'
+define service ZUI_AIRPORT_DAO {
+  expose ZC_Airport     as Airports;
+  expose /DMO/I_Airport as AirportVH;
+}

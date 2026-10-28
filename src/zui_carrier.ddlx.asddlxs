@@ -1,0 +1,10 @@
+@Metadata.layer: #CUSTOMER
+@Search.searchable: true
+annotate entity ZI_CARRIER_DAO_R
+    with 
+{
+    @Search.defaultSearchElement: true
+    @Search.fuzzinessThreshold: 0.8
+    Name;
+    
+}

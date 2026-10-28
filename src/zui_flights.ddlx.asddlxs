@@ -1,0 +1,24 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Flight',
+    typeNamePlural: 'Flights'
+}
+@Search.searchable: true
+annotate entity ZI_FLIGHTS_DAO_R with
+{
+  @UI.lineItem: [{ position: 10 }]
+  CarrierId;
+  @UI.lineItem: [{ position: 20 }]
+  ConnectionId;
+  @UI.lineItem: [{ position: 30, label: 'Flight Date' }]
+  FlightDate;
+  @UI.lineItem: [{ position: 40, label: 'Price' }]
+  Price;
+  @UI.lineItem: [{ position: 50, label: 'Plane Type' }]
+  @Search.defaultSearchElement: true
+  PlaneTypeId;
+  @UI.lineItem: [{ position: 60, label: 'Max Seats' }]
+  SeatsMax;
+  @UI.lineItem: [{ position: 70, label: 'Occupied Seats' }]
+  SeatsOccupied;
+}

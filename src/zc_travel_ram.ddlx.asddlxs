@@ -1,0 +1,165 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {
+  typeName: 'Viaje',
+  typeNamePlural: 'Viajes',
+  title: {
+    type: #STANDARD,
+    value: 'TravelId'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'Description'
+  }
+}
+
+annotate entity zc_travel_ram with
+{
+  @UI.facet: [
+    {
+      id: 'General',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Información del viaje',
+      position: 10
+    },
+    {
+      id: 'Audit',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Audit',
+      label: 'Auditoría',
+      position: 20
+    }
+  ]
+
+  @UI: {
+    lineItem: [
+      { position: 10, importance: #HIGH, label: 'Viaje' }
+    ],
+    identification: [
+      { position: 10, label: 'Viaje' }
+    ],
+    selectionField: [
+      { position: 10 }
+    ]
+  }
+  TravelId;
+
+  @UI: {
+    lineItem: [
+      { position: 20, importance: #HIGH, label: 'Agencia' }
+    ],
+    identification: [
+      { position: 20, label: 'Agencia' }
+    ],
+    selectionField: [
+      { position: 20 }
+    ]
+  }
+  AgencyId;
+
+  @UI: {
+    lineItem: [
+      { position: 30, importance: #HIGH, label: 'Cliente' }
+    ],
+    identification: [
+      { position: 30, label: 'Cliente' }
+    ],
+    selectionField: [
+      { position: 30 }
+    ]
+  }
+  CustomerId;
+
+  @UI: {
+    lineItem: [
+      { position: 40, importance: #MEDIUM, label: 'Fecha de inicio' }
+    ],
+    identification: [
+      { position: 40, label: 'Fecha de inicio' }
+    ],
+    selectionField: [
+      { position: 40 }
+    ]
+  }
+  BeginDate;
+
+  @UI: {
+    lineItem: [
+      { position: 50, importance: #MEDIUM, label: 'Fecha de fin' }
+    ],
+    identification: [
+      { position: 50, label: 'Fecha de fin' }
+    ]
+  }
+  EndDate;
+
+  @UI: {
+    lineItem: [
+      { position: 60, importance: #MEDIUM, label: 'Tarifa de reserva' }
+    ],
+    identification: [
+      { position: 60, label: 'Tarifa de reserva' }
+    ]
+  }
+  BookingFee;
+
+  @UI: {
+    lineItem: [
+      { position: 70, importance: #HIGH, label: 'Precio total' }
+    ],
+    identification: [
+      { position: 70, label: 'Precio total' }
+    ]
+  }
+  TotalPrice;
+
+  @UI.identification: [
+    { position: 80, label: 'Moneda' }
+  ]
+  CurrencyCode;
+
+  @UI: {
+    lineItem: [
+      { position: 80, importance: #MEDIUM, label: 'Descripción' }
+    ],
+    identification: [
+      { position: 90, label: 'Descripción' }
+    ]
+  }
+  Description;
+
+  @UI: {
+    lineItem: [
+      { position: 90, importance: #HIGH, label: 'Estado' }
+    ],
+    identification: [
+      { position: 100, label: 'Estado' }
+    ],
+    selectionField: [
+      { position: 50 }
+    ]
+  }
+  Status;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Audit', position: 10, label: 'Creado por' }
+  ]
+  Createdby;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Audit', position: 20, label: 'Fecha de creación' }
+  ]
+  Createdat;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Audit', position: 30, label: 'Modificado por' }
+  ]
+  Lastchangedby;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Audit', position: 40, label: 'Última modificación' }
+  ]
+  Lastchangedat;
+}
